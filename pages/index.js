@@ -1,21 +1,26 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
-import Button from './components/Button';
-import Move from './components/Move';
-import SideMove from './components/SideMove';
-import Spring from './components/Spring';
-import LoopTrue from './components/LoopTrue';
-import SpringTest from './components/SpringTest';
-import AwesomeSpring from './components/AwesomeSpring';
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import Button from "./components/Button";
+import Move from "./components/Move";
+import SideMove from "./components/SideMove";
+import Spring from "./components/Spring";
+import LoopTrue from "./components/LoopTrue";
+import SpringTest from "./components/SpringTest";
+import DetectWheel from "./components/DetectWheel";
+import { useEffect, useRef, useState } from "react";
+import Wheeeeeeeeeeeeeel from "./components/wheeeeeeeeeeeeeel";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+// import AwesomeSpring from './components/AwesomeSpring';
 
 export default function Home() {
-  // const a = document.querySelector('body');
-  // console.log(
-  //   a.addEventListener('scroll', () => {
-  //     console.log('move?');
-  //   })
-  // );
+  const [tempX, setTempX] = useState(0);
+  const [tempY, setTempY] = useState(0);
+
+  const bodyCheck = useRef(null);
+  const bodyConsole = () => {
+    console.log(bodyCheck.current);
+  };
 
   return (
     <div className={styles.container}>
@@ -25,28 +30,108 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <header>
+        <span>hey?</span>
+      </header>
+
       <main className={styles.main}>
-        <Button />
+        {/* <Wheeeeeeeeeeeeeel /> */}
+        {/* <Button /> */}
         {/* <Move /> */}
         {/* <Spring /> */}
         {/* <SideMove /> */}
         {/* <LoopTrue /> */}
+        {/* <DetectWheel /> */}
         {/* <SpringTest /> */}
-        <AwesomeSpring />
+        {/* <AwesomeSpring /> */}
+
+        <Parallax pages={3} horizontal={true}>
+          <ParallaxLayer
+            offset={0}
+            speed={10}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              background: "hotpink",
+            }}
+          >
+            <p>1</p>
+          </ParallaxLayer>
+
+          <ParallaxLayer
+            offset={1}
+            speed={0.5}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              background: "blue",
+            }}
+          >
+            <p>2</p>
+          </ParallaxLayer>
+
+          <ParallaxLayer
+            offset={3}
+            speed={0.5}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              background: "green",
+            }}
+          >
+            <p>3</p>
+          </ParallaxLayer>
+        </Parallax>
+
+        {/* <Parallax pages={2} style={{ top: "0", left: "0" }} horizontal={true}>
+          <ParallaxLayer
+            offset={0}
+            speed={2.5}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <p>Scroll down</p>
+          </ParallaxLayer>
+
+          <ParallaxLayer
+            offset={1}
+            speed={2}
+            style={{ backgroundColor: "#ff6d6d" }}
+          />
+
+          <ParallaxLayer
+            offset={1}
+            speed={0.5}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              color: "white",
+            }}
+          >
+            <p>Scroll up</p>
+          </ParallaxLayer>
+        </Parallax> */}
       </main>
 
-      <footer className={styles.footer}>
+      {/* <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
-      </footer>
+      </footer> */}
     </div>
   );
 }
