@@ -1,16 +1,16 @@
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import Button from "./components/Button";
-import Move from "./components/Move";
-import SideMove from "./components/SideMove";
-import Spring from "./components/Spring";
-import LoopTrue from "./components/LoopTrue";
-import SpringTest from "./components/SpringTest";
-import DetectWheel from "./components/DetectWheel";
-import { useEffect, useRef, useState } from "react";
-import Wheeeeeeeeeeeeeel from "./components/wheeeeeeeeeeeeeel";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
+import Button from './components/Button';
+import Move from './components/Move';
+import SideMove from './components/SideMove';
+import Spring from './components/Spring';
+import LoopTrue from './components/LoopTrue';
+import SpringTest from './components/SpringTest';
+import DetectWheel from './components/DetectWheel';
+import { useEffect, useRef, useState } from 'react';
+import Wheeeeeeeeeeeeeel from './components/wheeeeeeeeeeeeeel';
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 // import AwesomeSpring from './components/AwesomeSpring';
 
 export default function Home() {
@@ -46,14 +46,24 @@ export default function Home() {
         {/* <AwesomeSpring /> */}
 
         <Parallax pages={3} horizontal={true}>
+          <LoopTrue />
+          <header>
+            <ul>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+            </ul>
+          </header>
           <ParallaxLayer
             offset={0}
             speed={10}
             style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              background: "hotpink",
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              background: 'hotpink',
             }}
           >
             <p>1</p>
@@ -63,10 +73,10 @@ export default function Home() {
             offset={1}
             speed={0.5}
             style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              background: "blue",
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              background: 'blue',
             }}
           >
             <p>2</p>
@@ -76,14 +86,24 @@ export default function Home() {
             offset={3}
             speed={0.5}
             style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              background: "green",
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              background: 'green',
             }}
           >
             <p>3</p>
           </ParallaxLayer>
+
+          <footer>
+            <ul>
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+            </ul>
+          </footer>
         </Parallax>
 
         {/* <Parallax pages={2} style={{ top: "0", left: "0" }} horizontal={true}>
