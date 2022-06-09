@@ -1,36 +1,45 @@
 import { config } from "react-spring";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import styles from "../styles/vertical.module.css";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-export default function SideScrollPage() {
-  const parallax = useRef(null);
+export default function Vertical() {
+  const [offset, setOffset] = useState(0);
+  const parallax = useRef(undefined);
+
+  // useEffect(() => {
+  //   document.addEventListener("keydown", (e) => {
+  //     function ve() {
+  //       setOffset(parallax.current.offset);
+  //       parallax.current.scrollTo(offset);
+  //     }
+
+  //     e.key === "Enter" ? ve() : console.log(e);
+  //   });
+
+  //   console.log(parallax);
+  // });
 
   return (
     <div className={styles.scrollBody}>
-      <Parallax pages={3} ref={parallax} innerStyle>
+      <Parallax pages={5} ref={parallax} config={config.wobby}>
         <ParallaxLayer
           offset={0}
           speed={0}
-          onClick={() => parallax.current.scrollTo(1)}
+          onClick={() => {
+            parallax.current.scrollTo(1);
+            console.log(parallax.current.content);
+            console.log(parallax.current.container);
+            console.log(parallax.current);
+          }}
           style={{
             display: "flex",
-            // justifyContent: "flex-start",
-            // alignContent: "space-between",
-            background: "white",
+            justifyContent: "center",
+            alignItems: "center",
+            background: "#00eeff",
           }}
         >
-          <div>
-            <header>
-              <h1>header</h1>
-            </header>
-            <main>
-              <h1>body</h1>
-            </main>
-            <footer>
-              <h1>footer</h1>
-            </footer>
-          </div>
+          <h1>Layer1</h1>
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -44,13 +53,13 @@ export default function SideScrollPage() {
             background: "#eeaa99",
           }}
         >
-          <h1>2</h1>
+          <h1>Layer2</h1>
         </ParallaxLayer>
 
         <ParallaxLayer
           offset={2}
           speed={0}
-          onClick={() => parallax.current.scrollTo(0)}
+          onClick={() => parallax.current.scrollTo(3)}
           style={{
             display: "flex",
             justifyContent: "center",
@@ -58,7 +67,35 @@ export default function SideScrollPage() {
             background: "#ff9900",
           }}
         >
-          <h1>layer3</h1>
+          <h1>Layer3</h1>
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          offset={3}
+          speed={0}
+          onClick={() => parallax.current.scrollTo(4)}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            background: "#00eeaa",
+          }}
+        >
+          <h1>Layer4</h1>
+        </ParallaxLayer>
+
+        <ParallaxLayer
+          offset={4}
+          speed={0}
+          onClick={() => parallax.current.scrollTo(0)}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            background: "#0099ff",
+          }}
+        >
+          <h1>Layer5</h1>
         </ParallaxLayer>
       </Parallax>
     </div>

@@ -1,49 +1,37 @@
+import { config } from "react-spring";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import styles from "../styles/SideScrollPage.module.css";
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
-import { useRef } from "react";
+import styles from "../styles/vertical.module.css";
+import { useEffect, useRef, useState } from "react";
 
-export default function Horizontal() {
-  const parallax = useRef(null);
+export default function Complex() {
+  const [offset, setOffset] = useState(0);
+  const parallax = useRef(undefined);
 
-  const testStyle = css`
-    color: hotpink;
-    textdecoration: underline;
-  `;
+  useEffect(() => {
+    document.addEventListener("keydown", (e) => {
+      function ve() {
+        setOffset(parallax.current.offset);
+        parallax.current.scrollTo(offset);
+      }
 
-  const ea = css({
-    textDecoration: "underline",
-    color: "hotpink",
+      e.key === "Enter" ? ve() : console.log(e);
+    });
+
+    console.log(parallax);
   });
-
-  const SomeComponent = () => {
-    return <h1 css={ea}>MOVEEEEEEEEEE</h1>;
-  };
-
-  const consoleWheel = (e) => {
-    console.log(`
-      px ${e.pageX},
-      py ${e.pageY},
-      dx ${e.deltaX},
-      dy ${e.deltaY},
-      dz ${e.deltaZ},
-      cx ${e.clientX},
-      cy ${e.clientY}
-      `);
-  };
-
-  const consoleKey = (e) => {
-    console.log(e);
-  };
 
   return (
     <div className={styles.scrollBody}>
-      <Parallax pages={5} ref={parallax} horizontal={true}>
+      <Parallax pages={5} ref={parallax} config={config.wobby}>
         <ParallaxLayer
           offset={0}
           speed={0}
-          onClick={() => parallax.current.scrollTo(1)}
+          onClick={() => {
+            parallax.current.scrollTo(1);
+            console.log(parallax.current.content);
+            console.log(parallax.current.container);
+            console.log(parallax.current);
+          }}
           style={{
             display: "flex",
             justifyContent: "center",
@@ -64,6 +52,7 @@ export default function Horizontal() {
             alignItems: "center",
             background: "#eeaa99",
           }}
+          horizontal={true}
         >
           <h1>Layer2</h1>
         </ParallaxLayer>
@@ -81,8 +70,9 @@ export default function Horizontal() {
         >
           <h1>Layer3</h1>
         </ParallaxLayer>
+
         <ParallaxLayer
-          offset={4}
+          offset={3}
           speed={0}
           onClick={() => parallax.current.scrollTo(4)}
           style={{
@@ -91,11 +81,13 @@ export default function Horizontal() {
             alignItems: "center",
             background: "#00eeaa",
           }}
+          horizontal={true}
         >
           <h1>Layer4</h1>
         </ParallaxLayer>
+
         <ParallaxLayer
-          offset={3}
+          offset={4}
           speed={0}
           onClick={() => parallax.current.scrollTo(0)}
           style={{

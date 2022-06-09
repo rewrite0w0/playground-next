@@ -15,6 +15,8 @@ export default function Home() {
       <main className={styles.main}>
         <Button src="/vertical" name="vertical" />
         <Button src="/horizontal" name="horizontal" />
+        <Button src="/complex" name="complex" />
+        <Button src="/scrolltelling" name="scrolltelling" />
       </main>
 
       <footer className={styles.footer}>
