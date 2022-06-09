@@ -18,3 +18,7 @@
 - https://www.brafton.com/blog/distribution/how-to-enthrall-your-audience-with-visual-storytelling/
 - https://pudding.cool/process/how-to-implement-scrollytelling/
 - https://github.com/jsonkao/react-scrollytelling-talk
+- https://actionauta.com/notes/integrating-tailwind-css-modules-sass-stylelint-nextjs
+- https://elad.medium.com/css-position-sticky-how-it-really-works-54cd01dc2d46
+- https://github.com/jsonkao/react-scrollytelling-talk
+- https://varun.ca/scrollytelling/

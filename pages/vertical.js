@@ -1,4 +1,4 @@
-import { config } from "react-spring";
+import { config, useSpring, animated, useTrail } from "react-spring";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import styles from "../styles/vertical.module.css";
 import { useEffect, useRef, useState } from "react";
@@ -20,6 +20,19 @@ export default function Vertical() {
   //   console.log(parallax);
   // });
 
+  const image = useSpring({
+    loop: true,
+    from: { opacity: 0 },
+    to: {
+      opacity: 1,
+    },
+    config: {
+      duration: 1000,
+    },
+  });
+
+  // const image2 = useTrail({});
+
   return (
     <div className={styles.scrollBody}>
       <Parallax pages={5} ref={parallax} config={config.wobby}>
@@ -39,7 +52,40 @@ export default function Vertical() {
             background: "#00eeff",
           }}
         >
-          <h1>Layer1</h1>
+          <header className={styles.header}>
+            {/* Header */}
+            <div>
+              <nav className={styles.nav}>
+                <span>logo </span>
+                <span>shopping mall </span>
+                <span>lang</span>
+              </nav>
+            </div>
+          </header>
+          <main>
+            <animated.div style={image}>
+              <img
+                src="https://images.unsplash.com/photo-1654714588210-b9a19d1f3d24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                alt="mock"
+              ></img>
+            </animated.div>
+
+            {/* <h1>Layer1</h1> */}
+            {/* <img
+              src="https://images.unsplash.com/photo-1654714588210-b9a19d1f3d24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+              alt="mock"
+            ></img> */}
+            {/* <Spring from={{ opacity: 0 }} to={{ opacity: 1 }}>
+              <animated.img
+                src="https://images.unsplash.com/photo-1654714588210-b9a19d1f3d24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                alt="mock"
+              />
+            </Spring> */}
+          </main>
+          {/* <footer className={styles.footer}>
+            Footer
+            <div>touch screen!</div>
+          </footer> */}
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -53,7 +99,11 @@ export default function Vertical() {
             background: "#eeaa99",
           }}
         >
-          <h1>Layer2</h1>
+          {/* <h1>Layer2</h1> */}
+          <img
+            src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1772&q=80"
+            alt="mock"
+          />
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -67,7 +117,11 @@ export default function Vertical() {
             background: "#ff9900",
           }}
         >
-          <h1>Layer3</h1>
+          {/* <h1>Layer3</h1> */}
+          <img
+            src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80"
+            alt="mock"
+          />
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -81,7 +135,11 @@ export default function Vertical() {
             background: "#00eeaa",
           }}
         >
-          <h1>Layer4</h1>
+          {/* <h1>Layer4</h1> */}
+          <img
+            src="https://images.unsplash.com/photo-1470093851219-69951fcbb533?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+            alt="mock"
+          />
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -96,6 +154,21 @@ export default function Vertical() {
           }}
         >
           <h1>Layer5</h1>
+          <footer className={styles.footer}>
+            {/* Footer */}
+            <div>touch screen!</div>
+            <div>로고 붙임</div>
+            <ul>
+              <li>
+                서울특별시 금천구 벚꽃로 234, 10층 1002호 (가산동,
+                에이스하이엔드타워 6차)
+              </li>
+              <li>대표자 : 최종석 | 사업자번호 : 119-86-51786</li>
+              <li>Tel : 02-852-7980 | Fax : 02-852-7983</li>
+              <li>e-mail : sales@lameditech.com</li>
+            </ul>
+            <span>COPYRIGHT © LAMEDITECH. ALL RIGHT RESERVED.</span>
+          </footer>
         </ParallaxLayer>
       </Parallax>
     </div>

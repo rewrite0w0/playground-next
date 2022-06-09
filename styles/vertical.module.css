@@ -14,3 +14,30 @@
 .displaySet {
   flex-direction: row;
 } */
+
+.header {
+  position: fixed;
+  top: 0;
+  height: 10vh;
+  width: 100%;
+}
+
+.nav {
+  display: inline;
+
+  @apply font-bold;
+}
+.main {
+}
+
+.footer {
+  position: fixed;
+  bottom: 10px;
+  height: 16vh;
+  width: 100%;
+  left: 10vh;
+}
+
+.temp {
+  color: gainsboro;
+}
