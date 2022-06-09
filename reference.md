@@ -8,3 +8,13 @@
 - https://codepen.io/clementGir/pen/RQqvQx
 - https://codepen.io/siamak/pen/ExgZRVy
 - https://codepen.io/kjbrum/pen/qooQJJ
+- https://www.wenyanet.com
+- https://makitani.net/shimauma/scrollytelling
+- https://www.nytimes.com/projects/2012/snow-fall/index.html#/?part=tunnel-creek
+- https://pudding.cool/process/how-to-implement-scrollytelling/
+- https://qiita-user-contents.imgix.net/https%3A%2F%2Fmiro.medium.com%2Fmax%2F600%2F0%2AoORf3nTfD54PSSlt.gif?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=c630b501b9d2729e6da642961cdb5ce0
+- https://qiita-user-contents.imgix.net/https%3A%2F%2Fmiro.medium.com%2Fmax%2F600%2F0%2AbZLqkmxm4Y_Gq_UB.gif?ixlib=rb-4.0.0&auto=format&gif-q=60&q=75&w=1400&fit=max&s=839657beb522af0a33cdab274c369f2c
+- https://www.iambinadam.org/en/
+- https://www.brafton.com/blog/distribution/how-to-enthrall-your-audience-with-visual-storytelling/
+- https://pudding.cool/process/how-to-implement-scrollytelling/
+- https://github.com/jsonkao/react-scrollytelling-talk
