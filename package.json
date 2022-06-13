@@ -11,8 +11,9 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/material": "^5.8.3",
     "@react-spring/parallax": "^9.4.5",
     "@react-spring/web": "^9.4.5",
     "d3": "^7.4.4",

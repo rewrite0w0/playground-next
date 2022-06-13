@@ -1,12 +1,14 @@
-import { config, useSpring, animated, useTrail } from 'react-spring';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import styles from '../styles/vertical.module.css';
-import { useEffect, useRef, useState } from 'react';
+import Image from "next/image";
+import { config, useSpring, animated, useTrail } from "react-spring";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import styles from "../styles/vertical.module.css";
+import { useEffect, useRef, useState } from "react";
+import logo from "../resource/logo.png";
 
-import { MyComponent } from './motion';
+// import { MyComponent } from './motion';
 // import { CircleIndicator } from '../components/CircleIndicator';
 
-import { motion, useViewportScroll } from 'framer-motion';
+import { motion, useViewportScroll } from "framer-motion";
 
 export const CircleIndicator = () => {
   const { scrollYProgress } = useViewportScroll();
@@ -37,6 +39,7 @@ export default function Vertical() {
   // });
 
   const image = useSpring({
+    loop: { reverse: true },
     from: { opacity: 0 },
     to: {
       opacity: 1,
@@ -50,8 +53,6 @@ export default function Vertical() {
 
   return (
     <div className={styles.scrollBody}>
-      <CircleIndicator />
-
       <Parallax pages={5} ref={parallax} config={config.wobby}>
         <ParallaxLayer
           offset={0}
@@ -63,41 +64,96 @@ export default function Vertical() {
             console.log(parallax.current);
           }}
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            background: '#00eeff',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            background: "#00eeff",
           }}
         >
           <header className={styles.header}>
             {/* Header */}
-            <div>
-              <nav className={styles.nav}>
-                <span>logo </span>
-                <span>shopping mall </span>
-                <span>lang</span>
-              </nav>
-            </div>
+
+            <nav className="bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
+              <div className="container flex flex-wrap justify-between items-center mx-auto">
+                <a href="https://puraxel.com" className="flex items-center">
+                  <Image
+                    width="100%"
+                    height="100%"
+                    // src={logo}
+                    src="https://puraxel.co.kr/img/logo.png"
+                    // src="https://images.unsplash.com/photo-1655051605841-2d90737e7206?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
+                    className="mr-3 h-6 sm:h-9  bg-black"
+                    alt="Puraxel Logo"
+                  />
+                  {/* <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+                    Puraxel
+                  </span> */}
+                </a>
+                <div className="flex items-center md:order-2">
+                  <div
+                    className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
+                    id="mobile-menu-2"
+                  >
+                    <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+                      <li>
+                        <a
+                          href="#"
+                          className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                          aria-current="page"
+                        >
+                          Home
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                        >
+                          About
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                        >
+                          Services
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                        >
+                          Pricing
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                        >
+                          Contact
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </nav>
           </header>
-          <main>
-            {/* <animated.div style={image}>
-              <img
-                src="https://images.unsplash.com/photo-1654714588210-b9a19d1f3d24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                alt="mock"
-              ></img>
-            </animated.div> */}
-            <MyComponent />
-            {/* <animated.img
-              style={image}
-              src="https://images.unsplash.com/photo-1654714588210-b9a19d1f3d24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-              alt="mock"
-            ></animated.img> */}
+          <main className="flex flex-wrap">
             {/* <h1>Layer1</h1> */}
+            <animated.div style={image} className="flex mx-auto">
+              {/* <h1>Font</h1> */}
+              <Image
+                src="https://puraxel.co.kr/img/main/section05_img01.png"
+                width="1000"
+                height="1000"
+                alt="fx5000?"
+              />
+            </animated.div>
           </main>
-          {/* <footer className={styles.footer}>
-            Footer
-            <div>touch screen!</div>
-          </footer> */}
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -105,17 +161,13 @@ export default function Vertical() {
           speed={0}
           onClick={() => parallax.current.scrollTo(2)}
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            background: '#eeaa99',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            background: "#eeaa99",
           }}
         >
           <h1>Layer2</h1>
-          {/* <img
-            src="https://images.unsplash.com/photo-1474511320723-9a56873867b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1772&q=80"
-            alt="mock"
-          /> */}
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -123,17 +175,13 @@ export default function Vertical() {
           speed={0}
           onClick={() => parallax.current.scrollTo(3)}
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            background: '#ff9900',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            background: "#ff9900",
           }}
         >
           <h1>Layer3</h1>
-          {/* <img
-            src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80"
-            alt="mock"
-          /> */}
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -141,17 +189,13 @@ export default function Vertical() {
           speed={0}
           onClick={() => parallax.current.scrollTo(4)}
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            background: '#00eeaa',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            background: "#00eeaa",
           }}
         >
           <h1>Layer4</h1>
-          {/* <img
-            src="https://images.unsplash.com/photo-1470093851219-69951fcbb533?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-            alt="mock"
-          /> */}
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -159,15 +203,14 @@ export default function Vertical() {
           speed={0}
           onClick={() => parallax.current.scrollTo(0)}
           style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            background: '#0099ff',
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            background: "#0099ff",
           }}
         >
           <h1>Layer5</h1>
           <footer className={styles.footer}>
-            {/* Footer */}
             <div>touch screen!</div>
             <div>로고 붙임</div>
             <ul>

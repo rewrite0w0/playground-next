@@ -1,4 +1,7 @@
 const nextConfig = {
+  images: {
+    domains: ["puraxel.co.kr", "images.unsplash.com"],
+  },
   reactStrictMode: true,
   // i18n: {
   //   locales: ["kr", "en-US"],
@@ -18,3 +21,9 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
+// module.exports = {
+//   images: {
+//     domains: ["https://puraxel.co.kr"],
+//   },
+// };
