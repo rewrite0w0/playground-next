@@ -63,7 +63,7 @@ export default function Vertical() {
       color: "#8fa5b6",
     },
     enter: [
-      { opacity: 1, height: 80, innerHeight: 100 },
+      { opacity: 1, height: 80, innerHeight: 80 },
       { transform: "perspective(600px) rotateX(180deg)", color: "#28d79f" },
       { transform: "perspective(600px) rotateX(0deg)" },
     ],
@@ -91,10 +91,16 @@ export default function Vertical() {
     titleRef.current = [];
     setItems([]);
 
+    // titleRef.current.push(()=>s)
+
     titleRef.current.push(
-      setTimeout(() => setItems(["Puraxel", "FX-5000", "FX-1000"]), 2000)
+      setTimeout(
+        () => setItems(["Puraxel", "FX-5000", "FX-1000", "DDD", "ZZZZZZ"]),
+        2000
+      )
     );
     titleRef.current.push(setTimeout(() => setItems(["Puraxel"]), 5000));
+
     // titleRef.current.push(
     //   setTimeout(() => setItems(["Puraxel", "FX-5000", "FX-1000"]), 8000)
     // );
@@ -124,7 +130,7 @@ export default function Vertical() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            background: "#00eeff",
+            background: "#000000",
           }}
         >
           <header className={styles.header}>
