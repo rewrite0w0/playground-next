@@ -1,8 +1,20 @@
 import Image from "next/image";
-import { config, useSpring, animated, useTrail } from "react-spring";
+import {
+  config,
+  useSpring,
+  animated,
+  useTrail,
+  useTransition,
+} from "react-spring";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import styles from "../styles/vertical.module.css";
-import { useEffect, useRef, useState } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  useLayoutEffect,
+  useCallback,
+} from "react";
 import logo from "../resource/logo.png";
 
 // import { MyComponent } from './motion';
@@ -38,8 +50,33 @@ export default function Vertical() {
   //   console.log(parallax);
   // });
 
+  const titleRef = useRef([]);
+
+  const [items, setItems] = useState([]);
+
+  const transitions = useTransition(items, {
+    from: {
+      opacity: 0,
+      height: 0,
+      innerHeight: 0,
+      transform: "perspective(600px) rotateX(0deg)",
+      color: "#8fa5b6",
+    },
+    enter: [
+      { opacity: 1, height: 80, innerHeight: 100 },
+      { transform: "perspective(600px) rotateX(180deg)", color: "#28d79f" },
+      { transform: "perspective(600px) rotateX(0deg)" },
+    ],
+    leave: [
+      { color: "#c23369" },
+      { innerHeight: 0 },
+      { opacity: 0, height: 0 },
+    ],
+    update: { color: "#28bd47" },
+  });
+
   const image = useSpring({
-    loop: { reverse: true },
+    // loop: { reverse: true },
     from: { opacity: 0 },
     to: {
       opacity: 1,
@@ -48,6 +85,26 @@ export default function Vertical() {
       duration: 1000,
     },
   });
+
+  const reset = useCallback(() => {
+    titleRef.current.forEach(clearTimeout);
+    titleRef.current = [];
+    setItems([]);
+
+    titleRef.current.push(
+      setTimeout(() => setItems(["Puraxel", "FX-5000", "FX-1000"]), 2000)
+    );
+    titleRef.current.push(setTimeout(() => setItems(["Puraxel"]), 5000));
+    // titleRef.current.push(
+    //   setTimeout(() => setItems(["Puraxel", "FX-5000", "FX-1000"]), 8000)
+    // );
+    // console.log(titleRef.current);
+  }, []);
+
+  useEffect(() => {
+    reset();
+    return () => titleRef.current.forEach(clearTimeout);
+  }, []);
 
   // const image2 = useTrail({});
 
@@ -142,17 +199,24 @@ export default function Vertical() {
               </div>
             </nav>
           </header>
-          <main className="flex flex-wrap">
-            {/* <h1>Layer1</h1> */}
-            <animated.div style={image} className="flex mx-auto">
-              {/* <h1>Font</h1> */}
-              <Image
-                src="https://puraxel.co.kr/img/main/section05_img01.png"
-                width="1000"
-                height="1000"
-                alt="fx5000?"
-              />
-            </animated.div>
+          <main>
+            <div className={styles.container}>
+              <div className={styles.layer}>
+                {transitions(({ innerHeight, ...rest }, item) => (
+                  <animated.div
+                    className={styles.transitionsItem}
+                    style={rest}
+                    onClick={reset}
+                  >
+                    <animated.div
+                      style={{ overflow: "hidden", height: innerHeight }}
+                    >
+                      {item}
+                    </animated.div>
+                  </animated.div>
+                ))}
+              </div>
+            </div>
           </main>
         </ParallaxLayer>
 
@@ -167,7 +231,19 @@ export default function Vertical() {
             background: "#eeaa99",
           }}
         >
-          <h1>Layer2</h1>
+          {/* <h1>Layer2</h1> */}
+          <main className="flex flex-wrap">
+            {/* <h1>Layer1</h1> */}
+
+            <animated.div style={image} className="flex mx-auto">
+              <Image
+                src="https://puraxel.co.kr/img/main/section05_img01.png"
+                width="1000"
+                height="1000"
+                alt="fx5000?"
+              />
+            </animated.div>
+          </main>
         </ParallaxLayer>
 
         <ParallaxLayer
