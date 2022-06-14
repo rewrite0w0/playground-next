@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Button from "../components/Button";
+import Mailer from "../components/Mailer";
 
 export default function Home() {
   return (
@@ -17,6 +18,8 @@ export default function Home() {
         <Button src="/horizontal" name="horizontal" />
         <Button src="/complex" name="complex" />
         <Button src="/scrolltelling" name="scrolltelling" />
+        <Button src="/normal" name="normal" />
+        {/* <Mailer /> */}
       </main>
 
       <footer className={styles.footer}>

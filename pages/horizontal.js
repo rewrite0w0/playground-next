@@ -3,39 +3,40 @@ import styles from "../styles/SideScrollPage.module.css";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { useRef } from "react";
+import { motino, MotionConfig } from "framer-motion";
 
 export default function Horizontal() {
   const parallax = useRef(null);
 
-  const testStyle = css`
-    color: hotpink;
-    textdecoration: underline;
-  `;
+  // const testStyle = css`
+  //   color: hotpink;
+  //   textdecoration: underline;
+  // `;
 
-  const ea = css({
-    textDecoration: "underline",
-    color: "hotpink",
-  });
+  // const ea = css({
+  //   textDecoration: "underline",
+  //   color: "hotpink",
+  // });
 
-  const SomeComponent = () => {
-    return <h1 css={ea}>MOVEEEEEEEEEE</h1>;
-  };
+  // const SomeComponent = () => {
+  //   return <h1 css={ea}>MOVEEEEEEEEEE</h1>;
+  // };
 
-  const consoleWheel = (e) => {
-    console.log(`
-      px ${e.pageX},
-      py ${e.pageY},
-      dx ${e.deltaX},
-      dy ${e.deltaY},
-      dz ${e.deltaZ},
-      cx ${e.clientX},
-      cy ${e.clientY}
-      `);
-  };
+  // const consoleWheel = (e) => {
+  //   console.log(`
+  //     px ${e.pageX},
+  //     py ${e.pageY},
+  //     dx ${e.deltaX},
+  //     dy ${e.deltaY},
+  //     dz ${e.deltaZ},
+  //     cx ${e.clientX},
+  //     cy ${e.clientY}
+  //     `);
+  // };
 
-  const consoleKey = (e) => {
-    console.log(e);
-  };
+  // const consoleKey = (e) => {
+  //   console.log(e);
+  // };
 
   return (
     <div className={styles.scrollBody}>

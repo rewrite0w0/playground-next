@@ -15,7 +15,8 @@ import {
   useLayoutEffect,
   useCallback,
 } from "react";
-import logo from "../resource/logo.png";
+
+import * as d3 from "d3";
 
 // import { MyComponent } from './motion';
 // import { CircleIndicator } from '../components/CircleIndicator';
@@ -231,26 +232,103 @@ export default function Vertical() {
           speed={0}
           onClick={() => parallax.current.scrollTo(2)}
           style={{
-            display: "flex",
+            // display: "grid",
             justifyContent: "center",
             alignItems: "center",
-            background: "#eeaa99",
+            background: "linear-gradient(#e66465, #9198e5)",
           }}
         >
           {/* <h1>Layer2</h1> */}
-          <main className="flex flex-wrap">
-            {/* <h1>Layer1</h1> */}
+          {/* <h1>Layer1</h1> */}
+          <main>
+            <animated.div className="grid grid-cols-3 grid-rows-3 ">
+              <animated.div className="row-start-1 col-start-1 col-end-4">
+                <h1 className="row-start-1 col-start-1">건</h1>
+                <h1 className="row-start-1 col-start-4">곤</h1>
+                {/* <Image
+                  src="https://puraxel.co.kr/img/main/section18_img01.png"
+                  width="100"
+                  height="100"
+                  alt="건"
+                  // style="row-span-1"
+                  // style={{ marginTop: "50%" }}
+                  // className="col-span-1"
+                />
+                <Image
+                  src="https://puraxel.co.kr/img/main/section18_img01.png"
+                  width="100"
+                  height="100"
+                  alt="곤"
+                  // className="col-span-1"
+                  // style="row-span-1"
+                /> */}
+              </animated.div>
 
-            <animated.div style={image} className="flex mx-auto">
-              <Image
-                src="https://puraxel.co.kr/img/main/section05_img01.png"
-                width="1000"
-                height="1000"
-                alt="fx5000?"
-              />
+              <animated.div className="row-start-2 col-start-2">
+                {/* <Image
+                  src="https://puraxel.co.kr/img/main/section05_img01.png"
+                  width="1000"
+                  height="1000"
+                  alt="fx5000?"
+                  // className="col-span-2"
+                  // style="row-span-5"
+                /> */}
+                <h1 className="grid grid-cols-5 col-start-2 col-end-3 col-span-2">
+                  태극
+                </h1>
+              </animated.div>
+
+              <animated.div className="row-start-3">
+                {/* <Image
+                  src="https://puraxel.co.kr/img/main/section18_img01.png"
+                  width="100"
+                  height="100"
+                  alt="감"
+                  // className="col-span-1"
+                  // style="row-span-1"
+                />
+                <Image
+                  src="https://puraxel.co.kr/img/main/section18_img01.png"
+                  width="100"
+                  height="100"
+                  alt="리"
+                  // className="col-span-1"
+                  // style="row-span-1"
+                /> */}
+                <h1>감</h1>
+                <h1>리</h1>
+              </animated.div>
             </animated.div>
           </main>
         </ParallaxLayer>
+
+        {/* <ParallaxLayer offset={1.3} speed={0} style={{ pointerEvents: "none" }}>
+          <img
+            src="https://puraxel.co.kr/img/main/section18_img01.png"
+            style={{ width: "12%", marginLeft: "80%" }}
+          />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={1.3} speed={0} style={{ pointerEvents: "none" }}>
+          <img
+            src="https://puraxel.co.kr/img/main/section18_img01.png"
+            style={{ width: "12%", marginLeft: "80%", marginTop: "80%" }}
+          />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={1.3} speed={0} style={{ pointerEvents: "none" }}>
+          <img
+            src="https://puraxel.co.kr/img/main/section18_img01.png"
+            style={{ width: "12%", marginRight: "10%" }}
+          />
+        </ParallaxLayer>
+
+        <ParallaxLayer offset={1.3} speed={0} style={{ pointerEvents: "none" }}>
+          <img
+            src="https://puraxel.co.kr/img/main/section18_img01.png"
+            style={{ width: "12%", marginRight: "80%", marginTop: "80%" }}
+          />
+        </ParallaxLayer> */}
 
         <ParallaxLayer
           offset={2}
