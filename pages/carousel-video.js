@@ -4,11 +4,8 @@ import { Paper, Button, Card } from "@mui/material";
 import FloatingButton from "../components/floatingButton";
 import Compare from "./Compare";
 import { Home } from "@mui/icons-material";
-import { useState, useEffect, useRef } from "react";
 
-export default function CarouselComponent() {
-  const INTERVAL = 2000;
-
+export default function First() {
   const items = [
     {
       name: "Random Name #1",
@@ -64,29 +61,34 @@ export default function CarouselComponent() {
   return (
     <Carousel
       autoPlay
-      interval={INTERVAL}
-      duration={1000}
+      interval={2000}
+      duration={800}
       stopAutoPlayOnHover
-      changeOnFirstRender={true}
-      // swipe
-      // sx={(e) => console.log(e)}
-      // cycleNavigation={false}
-      // onChange={(props) => {
-      //   console.log(props);
-      // }}
+      swipe
       animation="slide"
+      // next={(next, active) =>
+      //   console.log(`we left ${active}, and are now at ${next}`)
+      // }
+      // prev={(prev, active) =>
+      //   console.log(`we left ${active}, and are now at ${prev}`)
+      // }
+      fullHeightHover={false} // We want the nav buttons wrapper to only be as big as the button element is
       navButtonsProps={{
+        // Change the colors and radius of the actual buttons. THIS STYLES BOTH BUTTONS
         style: {
-          backgroundColor: "#ffffff",
+          backgroundColor: "cornflowerblue",
           borderRadius: 0,
         },
       }}
       navButtonsWrapperProps={{
+        // Move the buttons to the bottom. Unsetting top here to override default style.
         style: {
           bottom: "0",
           top: "unset",
         },
       }}
+      NextIcon="next" // Change the "inside" of the next button to "next"
+      PrevIcon="prev" // Change the "inside of the prev button to "prev"
       indicatorIconButtonProps={{
         style: {
           padding: "0.25rem", // 1
@@ -96,8 +98,6 @@ export default function CarouselComponent() {
       activeIndicatorIconButtonProps={{
         style: {
           color: "#E29D9D", // 2
-          backgroundColor: "#E29D9D",
-          padding: "0.005rem",
         },
       }}
       indicatorContainerProps={{
@@ -116,8 +116,8 @@ export default function CarouselComponent() {
 
 function Item(props) {
   return (
-    // <Paper className="grid grid-cols-2 top-1">
-    <div className="grid grid-cols-2 top-1">
+    // <Card>
+    <Paper className="grid grid-cols-2 top-1">
       <div>
         <h2>{props.item.name}</h2>
         <p>{props.item.description}</p>
@@ -131,9 +131,14 @@ function Item(props) {
           alt={props.item.name}
         />
       </div>
-    </div>
+
+      <Button className="CheckButton">Check it out!</Button>
+      {/* <FloatingButton foo="foo" />
+      <br />
+      <FloatingButton foo="bar" />
+      <br />
+    <Compare /> */}
+    </Paper>
+    // </Card>
   );
-  {
-    /* </Paper> */
-  }
 }

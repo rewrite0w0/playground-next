@@ -1,14 +1,29 @@
-import Image from "next/image";
-import Carousel from "react-material-ui-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 import { Paper, Button, Card } from "@mui/material";
-import FloatingButton from "../components/floatingButton";
-import Compare from "./Compare";
-import { Home } from "@mui/icons-material";
-import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 
-export default function CarouselComponent() {
-  const INTERVAL = 2000;
+function Item(props) {
+  return (
+    <Paper className="grid grid-cols-2 top-1">
+      <div>
+        <h2>{props.item.name}</h2>
+        <p>{props.item.description}</p>
+        <h1>{props.item.lorem}</h1>
+      </div>
+      <div>
+        <Image
+          src={props.item.image}
+          width="2000"
+          height="1600"
+          alt={props.item.name}
+        />
+      </div>
+    </Paper>
+  );
+}
 
+export default function Caro() {
   const items = [
     {
       name: "Random Name #1",
@@ -62,78 +77,10 @@ export default function CarouselComponent() {
   ];
 
   return (
-    <Carousel
-      autoPlay
-      interval={INTERVAL}
-      duration={1000}
-      stopAutoPlayOnHover
-      changeOnFirstRender={true}
-      // swipe
-      // sx={(e) => console.log(e)}
-      // cycleNavigation={false}
-      // onChange={(props) => {
-      //   console.log(props);
-      // }}
-      animation="slide"
-      navButtonsProps={{
-        style: {
-          backgroundColor: "#ffffff",
-          borderRadius: 0,
-        },
-      }}
-      navButtonsWrapperProps={{
-        style: {
-          bottom: "0",
-          top: "unset",
-        },
-      }}
-      indicatorIconButtonProps={{
-        style: {
-          padding: "0.25rem", // 1
-          color: "#D9D9D9", // 3
-        },
-      }}
-      activeIndicatorIconButtonProps={{
-        style: {
-          color: "#E29D9D", // 2
-          backgroundColor: "#E29D9D",
-          padding: "0.005rem",
-        },
-      }}
-      indicatorContainerProps={{
-        style: {
-          marginTop: "2rem", // 5
-          textAlign: "center", // 4
-        },
-      }}
-    >
+    <Carousel autoPlay interval={1000} infiniteLoop showIndicators>
       {items.map((item, i) => (
         <Item key={i} item={item} />
       ))}
     </Carousel>
   );
-}
-
-function Item(props) {
-  return (
-    // <Paper className="grid grid-cols-2 top-1">
-    <div className="grid grid-cols-2 top-1">
-      <div>
-        <h2>{props.item.name}</h2>
-        <p>{props.item.description}</p>
-        <h1>{props.item.lorem}</h1>
-      </div>
-      <div>
-        <Image
-          src={props.item.image}
-          width="2000"
-          height="1600"
-          alt={props.item.name}
-        />
-      </div>
-    </div>
-  );
-  {
-    /* </Paper> */
-  }
 }
