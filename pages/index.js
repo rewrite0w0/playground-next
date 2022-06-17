@@ -28,6 +28,10 @@ export default function Home() {
         <Button src="/menus/menus" name="menus" />
         <Button src="/navbar/navbars" name="navbars" />
         <Button />
+        <Button src="/input/inputs" name="inputs" />
+        <Button src="/button/buttons" name="buttons" />
+        <Button src="/para/paras" name="para" />
+        <Button src="/modal/modals" name="modal" />
       </main>
 
       <footer className={styles.footer}>
