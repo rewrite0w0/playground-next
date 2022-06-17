@@ -2,11 +2,6 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Button from "../components/Button";
-import Menu0 from "./menu0";
-import Menu from "./menu";
-import Menu2 from "./menu2";
-import Menu3 from "./menu3";
-import { margin } from "@mui/system";
 
 export default function Home() {
   return (
@@ -28,29 +23,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        {/* <Button src="/vertical" name="vertical" />
-        <Button src="/horizontal" name="horizontal" /> */}
-        {/* <Button src="/complex" name="complex" /> */}
-        {/* <Button src="/scrolltelling" name="scrolltelling" /> */}
-        {/* <Button src="/normal" name="normal" /> */}
-        {/* <Mailer /> */}
-        {/* <Button src="/A" name="A" />
-        <Button src="/B" name="B" /> */}
-        <h1>아재아재 MOVE?</h1>
-        <article
-          style={{ padding: "0", margin: "0" }}
-          className="grid grid-rows-2 grid-cols-5"
-        >
-          <Menu0 className="col-span-1" />
-          <br />
-          <Menu className="col-span-1" />
-          <br />
-          <Menu2 className="col-span-1" />
-          <br />
-          <Menu3 className="col-span-3" />
-        </article>
-
-        <article>{}</article>
+        <Button src="/carousel/carousel" name="carousel" />
+        <Button src="/imagecompare/Compare" name="compare" />
+        <Button src="/menus/menus" name="menus" />
+        <Button src="/navbar/navbars" name="navbars" />
+        <Button />
       </main>
 
       <footer className={styles.footer}>

@@ -5,47 +5,21 @@ import styled from "@emotion/styled";
 import { useRef } from "react";
 import { motino, MotionConfig } from "framer-motion";
 import CarouselComponent from "./carousel/carousel";
+import Ca from "./carousel/Ca";
+import ReactPlayer from "react-player";
 
 export default function Horizontal() {
   const parallax = useRef(null);
 
-  // const testStyle = css`
-  //   color: hotpink;
-  //   textdecoration: underline;
-  // `;
-
-  // const ea = css({
-  //   textDecoration: "underline",
-  //   color: "hotpink",
-  // });
-
-  // const SomeComponent = () => {
-  //   return <h1 css={ea}>MOVEEEEEEEEEE</h1>;
-  // };
-
-  // const consoleWheel = (e) => {
-  //   console.log(`
-  //     px ${e.pageX},
-  //     py ${e.pageY},
-  //     dx ${e.deltaX},
-  //     dy ${e.deltaY},
-  //     dz ${e.deltaZ},
-  //     cx ${e.clientX},
-  //     cy ${e.clientY}
-  //     `);
-  // };
-
-  // const consoleKey = (e) => {
-  //   console.log(e);
-  // };
-
   return (
     <div className={styles.scrollBody}>
-      <Parallax pages={11} ref={parallax} horizontal={true}>
+      <Parallax pages={12} ref={parallax}>
         <ParallaxLayer
           offset={0}
           speed={0}
-          onClick={() => parallax.current.scrollTo(1)}
+          // onClick={() => parallax.current.scrollTo(1)}
+          onScroll={(w) => console.log(w)}
+          className="move"
           style={{
             display: "flex",
             justifyContent: "center",
@@ -215,7 +189,7 @@ export default function Horizontal() {
         <ParallaxLayer
           offset={10}
           speed={0}
-          onClick={() => parallax.current.scrollTo(0)}
+          onClick={() => parallax.current.scrollTo(11)}
           // style={{
           //   display: "flex",
           //   justifyContent: "center",
@@ -226,6 +200,20 @@ export default function Horizontal() {
           // }}
         >
           <CarouselComponent />
+        </ParallaxLayer>
+        <ParallaxLayer
+          offset={11}
+          speed={0}
+          onClick={() => parallax.current.scrollTo(0)}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            // background:
+            //   "linear-gradient( 68.4deg,  rgba(248,182,204,1) 0.5%, rgba(192,198,230,1) 49%, rgba(225,246,240,1) 99.8% )",
+          }}
+        >
+          <Ca />
         </ParallaxLayer>
       </Parallax>
     </div>

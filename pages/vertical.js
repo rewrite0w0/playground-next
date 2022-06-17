@@ -123,9 +123,10 @@ export default function Vertical() {
           speed={0}
           onClick={() => {
             parallax.current.scrollTo(1);
-            console.log(parallax.current.content);
-            console.log(parallax.current.container);
-            console.log(parallax.current);
+            // console.log(parallax.current.content);
+            // console.log(parallax.current.container);
+            // console.log(parallax.current);
+            // console.log(parallax);
           }}
           style={{
             display: "flex",
@@ -134,96 +135,98 @@ export default function Vertical() {
             background: "#000000",
           }}
         >
-          <header className={styles.header}>
-            {/* Header */}
+          <main>
+            <header className={styles.header}>
+              {/* Header */}
 
-            <nav className="bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
-              <div className="container flex flex-wrap justify-between items-center mx-auto">
-                <a href="https://puraxel.com" className="flex items-center">
-                  <Image
-                    width="100%"
-                    height="100%"
-                    // src={logo}
-                    src="https://puraxel.co.kr/img/logo.png"
-                    // src="https://images.unsplash.com/photo-1655051605841-2d90737e7206?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
-                    className="mr-3 h-6 sm:h-9  bg-black"
-                    alt="Puraxel Logo"
-                  />
-                  {/* <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+              <nav className="bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800">
+                <div className="container flex flex-wrap justify-between items-center mx-auto">
+                  <a href="https://puraxel.com" className="flex items-center">
+                    <Image
+                      width="100%"
+                      height="100%"
+                      // src={logo}
+                      src="https://puraxel.co.kr/img/logo.png"
+                      // src="https://images.unsplash.com/photo-1655051605841-2d90737e7206?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
+                      className="mr-3 h-6 sm:h-9  bg-black"
+                      alt="Puraxel Logo"
+                    />
+                    {/* <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
                     Puraxel
                   </span> */}
-                </a>
-                <div className="flex items-center md:order-2">
-                  <div
-                    className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
-                    id="mobile-menu-2"
-                  >
-                    <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-                      <li>
-                        <a
-                          href="#"
-                          className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
-                          aria-current="page"
-                        >
-                          Home
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                        >
-                          About
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                        >
-                          Services
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                        >
-                          Pricing
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                        >
-                          Contact
-                        </a>
-                      </li>
-                    </ul>
+                  </a>
+                  <div className="flex items-center md:order-2">
+                    <div
+                      className="hidden justify-between items-center w-full md:flex md:w-auto md:order-1"
+                      id="mobile-menu-2"
+                    >
+                      <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+                        <li>
+                          <a
+                            href="#"
+                            className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                            aria-current="page"
+                          >
+                            Home
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                          >
+                            About
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                          >
+                            Services
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                          >
+                            Pricing
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                          >
+                            Contact
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </nav>
-          </header>
-          <main>
-            <div className={styles.container}>
-              <div className={styles.layer}>
-                {transitions(({ innerHeight, ...rest }, item) => (
-                  <animated.div
-                    className={styles.transitionsItem}
-                    style={rest}
-                    onClick={reset}
-                  >
+              </nav>
+            </header>
+            <article>
+              <div className={styles.container}>
+                <div className={styles.layer}>
+                  {transitions(({ innerHeight, ...rest }, item) => (
                     <animated.div
-                      style={{ overflow: "hidden", height: innerHeight }}
+                      className={styles.transitionsItem}
+                      style={rest}
+                      onClick={reset}
                     >
-                      {item}
+                      <animated.div
+                        style={{ overflow: "hidden", height: innerHeight }}
+                      >
+                        {item}
+                      </animated.div>
                     </animated.div>
-                  </animated.div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            </article>
           </main>
         </ParallaxLayer>
 

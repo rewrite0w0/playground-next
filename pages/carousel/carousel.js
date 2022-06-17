@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Button, Card } from "@mui/material";
-import FloatingButton from "../components/floatingButton";
-import Compare from "./Compare";
 import { Home } from "@mui/icons-material";
 import { useState, useEffect, useRef } from "react";
 
