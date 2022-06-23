@@ -39,8 +39,7 @@ export default function SimpleSnackbar() {
     <div>
       <Button onClick={handleClick}>Open simple snackbar</Button>
       <Snackbar
-        vertical="center"
-        horizontal="center"
+        anchorOrigin={{ horizontal: "center", vertical: "top" }}
         open={open}
         autoHideDuration={2000}
         onClose={handleClose}

@@ -1,5 +1,5 @@
-import Check from "./checking3";
-import Pop from "./popover";
+import Check from "./check/checking3";
+import Pop from "./popover/popover";
 
 export default function it() {
   return (

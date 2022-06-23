@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "HalogenV";
+  src: url("./Halogen.otf");
+}
+
+.main {
+  font-family: "Halogen", sans-serif;
+  transform: scale(1, 0.4);
+
+  font-size: 40px;
+}
+
+.main2 {
+  font-family: "Halogen", sans-serif;
+  /* font-size: 4rem; */
+  font-size: 40px;
+}
+
+.main3 {
+  font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
+  font-stretch: ultra-expanded;
+  font-size: 40px;
+}
+
+.main4 {
+  font-family: sans-serif, "Helvetica Neue", "Lucida Grande", Arial;
+  font-size: 40px;
+}
+/* sudo mysql -u admin -h t-wecareu.c9ntjcb7zedm.ap-northeast-2.rds.amazonaws.com -p */
+/* #dev1234  */
