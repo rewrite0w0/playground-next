@@ -3,7 +3,7 @@ import styles from "../styles/SideScrollPage.module.css";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { useRef } from "react";
-import { motino, MotionConfig } from "framer-motion";
+import { motion, MotionConfig } from "framer-motion";
 import CarouselComponent from "./carousel/carousel";
 
 export default function Horizontal() {
